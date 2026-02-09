@@ -10,6 +10,44 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
+    <header>
+        <nav class="flex p-5 items-center justify-between bg-[#C6BDBD30] border-b border-gray-300">
+            <div class="text-xl"><span class="font-bold">English</span><img class="inline-block w-8 h-8" src="assets/logo.png" alt=""> জানালা</div>
+            <div class="nav-btn flex gap-1.5">
+                <button class="border border-blue-600 flex items-center justify-center gap-1 py-2 px-3 rounded-sm text-blue-700"><img src="assets/fa-circle-question.png" alt=""> FAQ</button>
+                <button class="border border-blue-600 flex items-center justify-center gap-1 py-2 px-3 rounded-sm text-blue-700"><img src="assets/fa-book-open.png" alt=""> Learn</button>
+                <button class="border border-blue-600 flex items-center justify-center gap-1 py-2 px-3 rounded-sm text-blue-700"><img src="assets/fa-arrow-right-from-bracket.png" alt=""> Logout</button>
+            </div>
+        </nav>
+    </header>
+    <h1 class="text-2xl font-bold text-center mt-40"><span class="text-blue-500">Let's</span> Learn Vocabularies</h1>
+    <section id="level-container" class="flex flex-wrap justify-center mt-5">
+        
+    </section>
+    <section>
+        <div id="lesson" class="text-center my-10 bg-gray-100 py-15 ">
+            <div id="clickBtn" >
+                <p class="text-xl text-gray-400">আপনি এখনো কোন Lesson Select করেন ন</p>
+                <h1 class="text-3xl mt-5 font-bold">একটি Lesson Select করুন।</h1>
+            </div>
+            <div id="lesson-container" class="grid grid-cols-4 gap-10">
+            </div>
+            <div id="no-lesson">
+                
+            </div>
+        </div>
+
+        <dialog id="word_details" class="modal">
+        <div class="modal-box">
+            <div id="details_container"></div>
+            <div class="mt-5">
+                <form method="dialog"><button class="btn bg-blue-700 text-white">Complete Learning</button></form>
+            </div>
+        </div>
+        </dialog>
+
+    </section>
+
     <script src="script/main.js"></script>
 </body>
 </html>
