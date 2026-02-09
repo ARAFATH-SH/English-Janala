@@ -40,7 +40,7 @@ const displayLessons = (lessons) => {
                         <div class="flex justify-between mt-10">
                             
                             <button id="modalBtn" onclick="loadModal(${element.id})" class="btn bg-sky-100 rounded-sm"> <img class="w-7 h-7" src="https://img.icons8.com/?size=60&id=59817&format=png" alt=""></button>   
-                            <button class="btn bg-sky-100 rounded-sm"><img class="w-7 h-7" src="https://img.icons8.com/?size=96&id=XXKS9oY4uqiZ&format=png" alt=""></button>
+                            <button onclick="pronounceWord('${element.word}')" class="btn bg-sky-100 rounded-sm"><img class="w-7 h-7" src="https://img.icons8.com/?size=96&id=XXKS9oY4uqiZ&format=png" alt=""></button>
                             
                         </div>
                     </div>
@@ -55,8 +55,7 @@ const displayLevels = (levels) => {
     for(let level of levels){
         const leveldiv = document.createElement("div");
         leveldiv.innerHTML = `
-        <button onclick="loadLevel(${level.level_no} )" class="flex items-center btn bg-white border border-blue-600 m-2 hover:bg-blue-700 hover:text-white font-bold"><img class="fill-current filter hover:invert 
-        hover:brightness-0" src="assets/fa-book-open.png" alt=""> Lesson-${level.level_no}</button>
+        <button onclick="loadLevel(${level.level_no} )" class="flex items-center btn bg-white border border-blue-600 m-2 hover:bg-blue-700 hover:text-white font-bold"><img class="w-6 h-6" src="https://img.icons8.com/?size=96&id=PaMqeFJp6WDW&format=png" alt=""> Lesson-${level.level_no}</button>
         `
         levelContainer.appendChild(leveldiv);
     }
@@ -97,5 +96,15 @@ const displayModal = (data) => {
         `
     }
 }
+
+function pronounceWord(word) {
+      const utterance = new SpeechSynthesisUtterance(word);
+      utterance.lang = 'en-EN'; // English
+      window.speechSynthesis.speak(utterance);
+    }
+
+document.getElementById("lgout").addEventListener("click", function() {
+    window.location.href = "index.html";
+})
 
 levels();
